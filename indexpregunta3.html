@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widht=device-width, initial-scale=3.0" <title>Pregunta 3</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        #t01 {
+            width: 100%;
+            background-color: #f1f1c1;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>pregunta3</h3>
+
+    <form id="form" method="get">
+        <p>Fecha: <input type="date" name="fecha"></p>
+        <p>Bebida:
+            <input type="radio" name="bebida" value="cocacola"> Cocacola
+            <input type="radio" name="bebida" value="cafe"> Café
+            <input type="radio" name="bebida" value="agua"> Agua
+            <input type="radio" name="bebida" value="jugo"> Jugo
+        </p>
+        <p>N° de Vasos: <input type="number" name="vasos" min="1"></p>
+        <p>
+            <button type="button" id="updateButton" class="btn btn-primary" onclick="productUpdate();">Enviar</button>
+            <script>
+
+                function productUpdate() {
+                    if ($("bebida").val() != null && $("bebida").val() != '') {
+                        productAddToTable();
+                        formClear();
+                        $("bebida").focus();
+                    }
+                    function productAddToTable() {
+
+                        if ($("drinks tbody").length == 0) {
+                            $("drinks").append("<tbody></tbody>");
+                        }
+
+                        $("drinks tbody").append("<tr>" +
+                            "<td>" + $("fecha").val() + "</td>" +
+                            "<td>" + $("bebida").val() + "</td>" +
+                            "<td>" + $("vasos").val() + "</td>" +
+                            "</tr>");
+                    }
+                }
+            </script>
+            <input type="reset" value="Borrar todo">
+        </p>
+
+    </form>
+    <table id="drinks" , class="default">
+        <tr id=heading>
+            <td><strong>Fecha</strong></td>
+            <td><strong>Bebida</strong></td>
+            <td><strong>Numero de vasos</strong></td>
+            <td><strong>mensaje</strong></td>
+        </tr>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+
+</html>
