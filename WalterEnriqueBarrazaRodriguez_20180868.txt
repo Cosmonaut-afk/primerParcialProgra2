@@ -2,6 +2,6 @@ progra2
 balbino aylagas
 esen feb 2021
 
-nombre completo:
-github url:
+nombre completo: Walter Enrique Barraza Rodriguez
+github url: https://github.com/Cosmonaut-afk/primerParcialProgra2
 progra2
